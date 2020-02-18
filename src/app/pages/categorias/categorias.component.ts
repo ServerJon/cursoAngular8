@@ -3,8 +3,7 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
 @Component({
   selector: 'app-categorias',
   templateUrl: './categorias.component.html',
-  styleUrls: ['./categorias.component.css'],
-  providers: []
+  styleUrls: ['./categorias.component.css']
 })
 export class CategoriasComponent implements OnInit {
   numero: number;
