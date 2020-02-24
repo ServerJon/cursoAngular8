@@ -1,3 +1,15 @@
+<!-- 
+
+    Ejemplo primer día, lunes 17
+    
 <button (click)="show_data ? show_data = false: show_data = true">Pulsa para mostrar informacion</button>
 
-<app-infogithub *ngIf="show_data"></app-infogithub>
+<app-infogithub *ngIf="show_data"></app-infogithub> -->
+
+<!-- Botones para navegar entre las diferentes rutas de mi aplicación -->
+
+<button *ngFor="let option of options" (click)="goTo(option.url)">{{option.name}}</button>
+
+<!-- Etiqueta de Angular para mostrar cada uno de los componentes que hemos añadido al archivo routing, con esta etiqueta Angular reconoce que 
+tiene que mostrar aquí cada componente por el que vayamos navegando -->
+<router-outlet></router-outlet>
