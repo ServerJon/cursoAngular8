@@ -22,9 +22,15 @@ export class AppComponent {
   constructor(private router: Router) {
     this.show_data = false;
 
+    /**
+     * Recordad que este Array es tan solo la forma que tengo yo de mostrar mi "menú de navegación" 
+     */
     this.options = [
       {"name": "Info","url": "/info"},
-      {"name": "Categorias","url": "/categorias"}
+      {"name": "Categorias","url": "/categorias"},
+      {"name": "Marcador","url": "/marcador"},
+      {"name": "Nuevo Marcador","url": "/nuevo-marcador"},
+      {"name": "Nuevo Modificar Marcador","url": "/nuevo-modificar-marcador"}
     ]
   }
 

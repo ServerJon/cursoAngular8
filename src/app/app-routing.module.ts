@@ -4,6 +4,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { InfogithubComponent } from './pages/infogithub/infogithub.component';
 import { CategoriasComponent } from './pages/categorias/categorias.component';
 import { PagenotfoundComponent } from './pages/pagenotfound/pagenotfound.component';
+import { MarcadorComponent } from './pages/marcador/marcador.component';
+import { NuevoMarcadorComponent } from './pages/nuevo-marcador/nuevo-marcador.component';
+import { NuevoModificarMarcadorComponent } from './pages/nuevo-modificar-marcador/nuevo-modificar-marcador.component';
 
 /**
  * Objeto con todas las rutas que vamos a crear para nuestra aplicación
@@ -11,6 +14,9 @@ import { PagenotfoundComponent } from './pages/pagenotfound/pagenotfound.compone
 const    routes:   Routes =  [
   {path: 'info', component: InfogithubComponent},
   {path: 'categorias', component: CategoriasComponent},
+  {path: 'marcador', component: MarcadorComponent},
+  {path: 'nuevo-marcador', component: NuevoMarcadorComponent},
+  {path: 'nuevo-modificar-marcador', component: NuevoModificarMarcadorComponent}, 
 
   // Ruta por defecto donde redirigirá a la que hayamos colocado, importante no olvidar '/' en el nombre de la ruta y 'pathMatch: "full"'
   {path: '', redirectTo: '/info', pathMatch: 'full'},

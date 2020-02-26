@@ -9,6 +9,7 @@ import { CategoriasService } from '../../services/categorias.service';
 })
 export class CategoriasComponent implements OnInit {
   categorias: any;
+  sub_categoria: string;
 
   constructor(private categoriasService: CategoriasService) { }
 
@@ -34,6 +35,10 @@ export class CategoriasComponent implements OnInit {
         console.log("Error getData() | categoriasService | CategoriasComponent ",error);
       }
     )
+  }
+
+  changeName(value: string){
+    this.sub_categoria = value + "!!!!"
   }
 
 }

@@ -1,0 +1,19 @@
+<p>marcador works!</p>
+
+<!-- En este HTML hemos implementado las opciones 1,3 y 4 de comunicación entre componentes
+    1. Padre-Hijo a través de @input
+    2. Hijo-Padre a través de @output
+    3. Acceso del Padre a variables del hijo a través de #var -->
+<h2>{{marcador}}</h2>
+<!-- Estos dos botones acceden a las funciones del componente Hijo a través de la variable #marcador1 colocada en el elemento app-modificar-marcador (componente Hijo) -->
+<button (click)="marcador1.suma()">Suma Padre</button>
+<button (click)="marcador1.resta()">Resta Hijo</button>
+
+<!-- Aquí tenemos tres métodos
+    1. #marcador1 -> Inicializa una variable a nivel de HTML para poder usarse en cualquier parte de este fichero
+    2. (actualizar) -> Captura el evento del componente Hijo y ejecutará la función que le asignemos del componente Padre. Importante:
+        a. Para recoger ese valor recibido del compoenente Hijo se le debe pasar a la función $event
+        b. El evento se debe llamar igual tanto en el Padre como en el Hijo para que angular parsee ese evento entre componentes
+    3. [marcadorHijo] -> Propiedad / atributo que enviamos al componente Hijo, recordad que deben de tener el mismo nombre para que Angular lo parsee. La variable 
+    a la que se iguala es una variable del componente Padre que queramos enviar al Hijo -->
+<app-modificar-marcador #marcador1 (actualizar)="actualizacion($event)" [marcadorHijo]="marcador"></app-modificar-marcador>
