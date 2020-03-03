@@ -2,8 +2,10 @@
  * Importamos todos los modulos/librerías que necesitemos de angular o cualquier plugin que instalemos
  */
 import { Component, OnInit } from '@angular/core';
+
 import { InfogithubService } from '../../services/infogithub.service';
 
+import { Info } from '../../interfaces/info';
 /**
  * Metadatos para que Angular sepa que esta clase se trata de un componente
  * 
@@ -24,7 +26,7 @@ import { InfogithubService } from '../../services/infogithub.service';
 })
 export class InfogithubComponent implements OnInit {
   //Variables
-  user: any;
+  user: Info;
 
   constructor(private infogithubService: InfogithubService) { }
 
@@ -34,7 +36,7 @@ export class InfogithubComponent implements OnInit {
   ngOnInit() {
 
     this.infogithubService.loadInfo().subscribe(
-      (response) => {
+      (response: Info) => {
         console.log("data: ",response);
 
         this.user = response;

@@ -18,6 +18,9 @@ import { MarcadorComponent } from './pages/marcador/marcador.component';
 import { ModificarMarcadorComponent } from './pages/modificar-marcador/modificar-marcador.component';
 import { NuevoMarcadorComponent } from './pages/nuevo-marcador/nuevo-marcador.component';
 import { NuevoModificarMarcadorComponent } from './pages/nuevo-modificar-marcador/nuevo-modificar-marcador.component';
+import { ComponentePrincipalComponent } from './pages/componente-principal/componente-principal.component';
+import { ComponenteUnoComponent } from './pages/componente-principal/componente-uno/componente-uno.component';
+import { ComponenteDosComponent } from './pages/componente-principal/componente-dos/componente-dos.component';
 
 @NgModule({
   /** Aqui declaramos los componentes que vayamos a utilizar */
@@ -30,7 +33,10 @@ import { NuevoModificarMarcadorComponent } from './pages/nuevo-modificar-marcado
     MarcadorComponent,
     ModificarMarcadorComponent,
     NuevoMarcadorComponent,
-    NuevoModificarMarcadorComponent
+    NuevoModificarMarcadorComponent,
+    ComponentePrincipalComponent,
+    ComponenteUnoComponent,
+    ComponenteDosComponent
   ],
   /** Importamos los modulos de Angular necesarios */
   imports: [

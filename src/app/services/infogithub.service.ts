@@ -3,6 +3,9 @@
  */
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
+import { Info } from '../interfaces/info';
 
 /**
  * Sin esta etiqueta de metadatos angular no sabe que esta clase se trata de un servicio. Pero hay que recordar que si no ponemos el atributo "providedIn: 'root'" debemos importar
@@ -26,11 +29,12 @@ export class InfogithubService {
   }
 
   /**
-   * Petición simple para recuperar los datos de un servidor
+   * Petición simple para recuperar los datos de un servidor. Ahora (clase lunes 2 marzo) se le ha añadido el tipo de objeto 
+   * con el que queremos trabajar. De esta manera haremos más segura la respuesta del servidor.
    */
-  loadInfo(){
+  loadInfo(): Observable<Info>{
 
-    return this.httpClient.get(this.url);
+    return this.httpClient.get<Info>(this.url);
   }
 
   /**

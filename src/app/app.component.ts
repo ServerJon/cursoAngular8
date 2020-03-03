@@ -30,7 +30,9 @@ export class AppComponent {
       {"name": "Categorias","url": "/categorias"},
       {"name": "Marcador","url": "/marcador"},
       {"name": "Nuevo Marcador","url": "/nuevo-marcador"},
-      {"name": "Nuevo Modificar Marcador","url": "/nuevo-modificar-marcador"}
+      {"name": "Nuevo Modificar Marcador","url": "/nuevo-modificar-marcador"},
+      {"name": "Nuevo Sub Módulo", "url": "/sub-modulo"},
+      {"name": "Sub rutas", "url": "/principal"}
     ]
   }
 
