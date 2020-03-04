@@ -1,0 +1,26 @@
+<p>login-reactive works!</p>
+
+<!-- Formulario reactivo con FormGroup -->
+<form [formGroup]="reactiveForm" >
+    <label for="username">Nombre: </label>
+    <input type="text" formControlName="username">
+    <!-- La forma de recuperar esos valores de cada variable es diferente a los Template Form, se debe de acceder al objeto del
+    formulario .get(nombre de la variable) -->
+    <div *ngIf="reactiveForm.get('username').invalid && (reactiveForm.get('username').dirty || reactiveForm.get('username').touched)" class="alert alert-danger">
+
+        <div *ngIf="reactiveForm.get('username').errors.required"> Name is required. </div>
+    
+    </div>
+
+    <label for="password">Contraseña: </label>
+    <input type="password" formControlName="password" >
+    <div *ngIf="reactiveForm.get('password').invalid && (reactiveForm.get('password').dirty || reactiveForm.get('password').touched)" class="alert alert-danger">
+
+        <div *ngIf="reactiveForm.get('password').errors.required"> Password is required. </div>
+        <div *ngIf="reactiveForm.get('password').errors.minlength"> Password must be at least 4 characters long. </div>
+    
+    </div>
+
+    <!-- El botón tampoco necesita acceder al .form como en el tipo Template si comparáis entre ambos tipos -->
+    <button type="button" (click)="onSubmit()" [disabled]="!reactiveForm.valid">Login</button>
+</form>

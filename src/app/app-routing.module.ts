@@ -41,6 +41,8 @@ const    routes:   Routes =  [
     {path: 'dos', component: ComponenteDosComponent},
   ]},
 
+  {path: 'modulo-login', loadChildren: "./pages/logins/logins.module#LoginsModule"},
+
   // Ruta por defecto donde redirigirá a la que hayamos colocado, importante no olvidar '/' en el nombre de la ruta y 'pathMatch: "full"'
   {path: '', redirectTo: '/info', pathMatch: 'full'},
   // Ruta de página no encontrada
