@@ -15,7 +15,9 @@ import { SubComponentDosComponent } from './sub-component-dos/sub-component-dos.
      */
     RouterModule.forChild([
       {path: "uno", component: SubComponentComponent},
-      {path: "dos", component: SubComponentDosComponent}
+      {path: "dos", component: SubComponentDosComponent},
+
+      {path: '', component: SubComponentComponent}
     ])
   ]
 })
