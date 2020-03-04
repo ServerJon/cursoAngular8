@@ -1,7 +1,7 @@
 <p>login-reactive works!</p>
 
 <!-- Formulario reactivo con FormGroup -->
-<form [formGroup]="reactiveForm" >
+<form [formGroup]="reactiveForm" (ngSubmit)="onSubmit()">
     <label for="username">Nombre: </label>
     <input type="text" formControlName="username">
     <!-- La forma de recuperar esos valores de cada variable es diferente a los Template Form, se debe de acceder al objeto del
@@ -22,5 +22,5 @@
     </div>
 
     <!-- El botón tampoco necesita acceder al .form como en el tipo Template si comparáis entre ambos tipos -->
-    <button type="button" (click)="onSubmit()" [disabled]="!reactiveForm.valid">Login</button>
+    <button type="submit" [disabled]="!reactiveForm.valid">Login</button>
 </form>

@@ -1,7 +1,7 @@
 <p>login-form-builder works!</p>
 
 <!-- Formulario reactivo con FormBuilder -->
-<form [formGroup]="reactiveForm" >
+<form [formGroup]="reactiveForm" (ngSubmit)="onSubmit()">
     <label for="username">Nombre: </label>
     <input type="text" formControlName="username"  >
     <div *ngIf="reactiveForm.get('username').invalid && reactiveForm.get('username').dirty" class="alert alert-danger">
@@ -22,5 +22,5 @@
     
     </div>
 
-    <button type="submit" (click)="onSubmit()" [disabled]="!reactiveForm.valid">Login</button>
+    <button type="submit" [disabled]="!reactiveForm.valid">Login</button>
 </form>
