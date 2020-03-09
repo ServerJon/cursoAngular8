@@ -1,4 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { LoginFormBuilderComponent } from './login-form-builder.component';
 
@@ -8,7 +9,8 @@ describe('LoginFormBuilderComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LoginFormBuilderComponent ]
+      declarations: [ LoginFormBuilderComponent ],
+      imports: [ ReactiveFormsModule ]
     })
     .compileComponents();
   }));
@@ -21,5 +23,11 @@ describe('LoginFormBuilderComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should have <p> with "login-form-builder works!"', () => {
+    let loginFormElement: HTMLElement = fixture.nativeElement;
+    let p = loginFormElement.querySelector('p');
+    expect(p.textContent).toEqual('login-form-builder works!');
   });
 });

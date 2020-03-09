@@ -1,12 +1,16 @@
 import { TestBed } from '@angular/core/testing';
 
 import { InfogithubService } from './infogithub.service';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('InfogithubService', () => {
-  beforeEach(() => TestBed.configureTestingModule({}));
+  let infogithubService: InfogithubService;
+  beforeEach(() => {
+    TestBed.configureTestingModule({ providers: [InfogithubService], imports: [HttpClientTestingModule]});
+    infogithubService = TestBed.get(InfogithubService);
+  });
 
   it('should be created', () => {
-    const service: InfogithubService = TestBed.get(InfogithubService);
-    expect(service).toBeTruthy();
+    expect(infogithubService).toBeTruthy();
   });
 });

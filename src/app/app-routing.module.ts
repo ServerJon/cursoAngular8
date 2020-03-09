@@ -42,6 +42,7 @@ const    routes:   Routes =  [
   ]},
 
   {path: 'modulo-login', loadChildren: "./pages/logins/logins.module#LoginsModule"},
+  {path: 'material', loadChildren: "./pages/material/material.module#MaterialModule"},
 
   // Ruta por defecto donde redirigirá a la que hayamos colocado, importante no olvidar '/' en el nombre de la ruta y 'pathMatch: "full"'
   {path: '', redirectTo: '/info', pathMatch: 'full'},

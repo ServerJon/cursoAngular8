@@ -33,7 +33,8 @@ export class AppComponent {
       {"name": "Nuevo Modificar Marcador","url": "/nuevo-modificar-marcador"},
       {"name": "Nuevo Sub Módulo", "url": "/sub-modulo"},
       {"name": "Sub rutas", "url": "/principal"},
-      {"name": "Logins", "url": "/modulo-login"}
+      {"name": "Logins", "url": "/modulo-login"},
+      {"name": "Material Design", "url": "/material"}
     ]
   }
 

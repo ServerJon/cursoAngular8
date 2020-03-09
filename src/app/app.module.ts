@@ -3,7 +3,7 @@
  *    Aquí cargaremos las librerias/modulos de Angular que necesitemos para trabajar en el proyecto.
  */
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -21,6 +21,7 @@ import { NuevoModificarMarcadorComponent } from './pages/nuevo-modificar-marcado
 import { ComponentePrincipalComponent } from './pages/componente-principal/componente-principal.component';
 import { ComponenteUnoComponent } from './pages/componente-principal/componente-uno/componente-uno.component';
 import { ComponenteDosComponent } from './pages/componente-principal/componente-dos/componente-dos.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   /** Aqui declaramos los componentes que vayamos a utilizar */
@@ -43,11 +44,13 @@ import { ComponenteDosComponent } from './pages/componente-principal/componente-
     BrowserModule,
     HttpClientModule,
     /** Debemos importar la clase de las rutas aquí */
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   /** Cargamos todos los servicios que queramos a utilizar en toda la app y que no tengan el 'provideIn: "root"' */
   providers: [],
   /** Este metadato apenas se modifica, nos indica el componente de enlace */
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA ]
 })
 export class AppModule { }

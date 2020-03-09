@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { MarcadorComponent } from './marcador.component';
+import { ModificarMarcadorComponent } from '../modificar-marcador/modificar-marcador.component';
 
 describe('MarcadorComponent', () => {
   let component: MarcadorComponent;
@@ -8,7 +9,7 @@ describe('MarcadorComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MarcadorComponent ]
+      declarations: [ MarcadorComponent, ModificarMarcadorComponent ]
     })
     .compileComponents();
   }));

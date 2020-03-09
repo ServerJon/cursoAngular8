@@ -1,4 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 import { InfogithubComponent } from './infogithub.component';
 
@@ -8,7 +9,8 @@ describe('InfogithubComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ InfogithubComponent ]
+      declarations: [ InfogithubComponent ],
+      imports: [HttpClientTestingModule]
     })
     .compileComponents();
   }));
