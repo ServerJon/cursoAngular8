@@ -1,0 +1,26 @@
+<p>login-form-builder works!</p>
+
+<!-- Formulario reactivo con FormBuilder -->
+<form [formGroup]="reactiveForm" (ngSubmit)="onSubmit()">
+    <label for="username">Nombre: </label>
+    <input type="text" formControlName="username"  >
+    <div *ngIf="reactiveForm.get('username').invalid && reactiveForm.get('username').dirty" class="alert alert-danger">
+
+        <div *ngIf="reactiveForm.get('username').errors.required"> Name is required. </div>
+
+        <!-- Otra forma de recuperar ese error -->
+        <div *ngIf="reactiveForm.get('username').hasError('required')"> Name is required with hasError. </div>
+    
+    </div>
+
+    <label for="password">Contraseña: </label>
+    <input type="password" formControlName="password" >
+    <div *ngIf="reactiveForm.get('password').invalid && reactiveForm.get('password').dirty" class="alert alert-danger">
+
+        <div *ngIf="reactiveForm.get('password').errors.required"> Password is required. </div>
+        <div *ngIf="reactiveForm.get('password').errors.minlength"> Password must be at least 4 characters long. </div>
+    
+    </div>
+
+    <button type="submit" [disabled]="!reactiveForm.valid">Login</button>
+</form>

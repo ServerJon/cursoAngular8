@@ -1,1 +1,10 @@
-<p>categorias works! {{numero}}</p>
+<p>categorias works!</p>
+
+<!-- Recorremos el array de categorias y vamos mostrando por cada categoría una etiqueta <p> con su nombre y una etiqueta del componente hijo
+    por cada palabra que contenga en el array de palabras -->
+<div *ngFor="let categoria of categorias">
+    <p>Nombre de la Categoria: {{categoria.name}}</p>
+    <button (click)="changeName(categoria.name)">Modificar nombre</button>
+    <!-- Recordar que la propiedad / atributo de [name] debe llamarse igual en el componente hijo y que los [] son del databinding de Angular -->
+    <app-palabras *ngFor="let palabra of categoria.palabras" [name]="palabra.name" [sub_categoria]="sub_categoria"></app-palabras>
+</div>
